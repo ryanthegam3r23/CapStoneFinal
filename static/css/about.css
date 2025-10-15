@@ -1,0 +1,68 @@
+/* For about page hero/banner section */
+.about-hero {
+  background: #004d99;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.about-hero .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.about-hero h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.about-hero p {
+  font-size: 1.2rem;
+}
+
+/* About content section */
+.about-content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.about-content .mission,
+.about-content .team,
+.about-content .values,
+.about-content .contact {
+  margin-bottom: 1.5rem;
+}
+.about-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #004d99;
+}
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.about-content ul {
+  list-style: disc inside;
+}
+.about-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Link styling override for about page contact */
+.about-content a {
+  color: #004d99;
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .about-hero h2 {
+    font-size: 1.6rem;
+  }
+  .about-hero p {
+    font-size: 1rem;
+  }
+  .about-content h3 {
+    font-size: 1.3rem;
+  }
+  .about-content p, .about-content ul li {
+    font-size: 0.95rem;
+  }
+}

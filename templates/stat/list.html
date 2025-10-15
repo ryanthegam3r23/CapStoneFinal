@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Stats
+{% endblock %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/stats.css'%}">
+{% endblock %}
+
+{% block content %}
+<div class="stats">
+    <h1>These are some stats</h1>
+
+    <div class="list">
+        {% for record in stat_list %}
+        <div class="record">
+            <h5>{{ record.player }}</h5>
+            <p>{{ record.match }}</p>
+            <p>{{ record.name }}</p>
+            <label>{{ record.created_on }}</label>
+            <a href="{% url 'stat_detail' record.id %}">View Details &rArr; </a>
+            
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,128 @@
+/* details.css */
+
+:root {
+  --background: #f9fafb;
+  --card-bg: #ffffff;
+  --card-border: #d1d5db;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --title-color: #1f2937;
+  --subtitle-color: #4b5563;
+  --label-color: #6b7280;
+  --text-color: #374151;
+  --footer-color: #9ca3af;
+
+  --radius: 10px;
+  --padding: 24px;
+  --section-gap: 20px;
+  --small-gap: 12px;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+}
+
+.stat-details-card {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: var(--padding);
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 16px var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+}
+
+.stat-header {
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: var(--small-gap);
+}
+
+.stat-header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: var(--title-color);
+}
+
+.stat-subtitle {
+  margin-top: 4px;
+  font-size: 1.1rem;
+  color: var(--subtitle-color);
+}
+
+.stat-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Label column + value column */
+  row-gap: var(--small-gap);
+  column-gap: 16px;
+}
+
+.stat-field {
+  display: contents; /* allow label and value to align nicely in grid rows */
+}
+
+.field-label {
+  font-weight: 600;
+  color: var(--label-color);
+  align-self: center;
+}
+
+.field-value {
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.stat-content .field-value {
+  /* content may be multiline */
+  margin-top: 4px;
+}
+
+.stat-footer {
+  border-top: 1px solid var(--card-border);
+  padding-top: var(--small-gap);
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.9rem;
+  color: var(--footer-color);
+}
+
+.created-label {
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.created-date {
+  font-style: italic;
+}
+
+/* Hover effect (if you want to highlight the card on hover) */
+.stat-details-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .stat-details-card {
+    padding: 16px;
+    margin: 40px 16px;
+  }
+  .stat-header h1 {
+    font-size: 1.8rem;
+  }
+  .stat-subtitle {
+    font-size: 1rem;
+  }
+  .stat-body {
+    grid-template-columns: 1fr; /* stack label above value on small screens */
+  }
+  .field-label {
+    margin-bottom: 4px;
+  }
+}
+

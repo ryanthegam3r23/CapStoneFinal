@@ -1,0 +1,17 @@
+nav {
+    background-color: coral;
+}
+
+
+
+footer {
+    padding: 10px 0 10px 0;
+    color: black;
+    background-color: coral;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

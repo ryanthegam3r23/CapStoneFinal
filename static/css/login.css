@@ -1,0 +1,27 @@
+.login {
+    background-color: #f4f0f0;
+}
+
+.login h1 {
+    color: darkcyan;
+}
+
+.login form {
+    border: 1px solid #333;
+    border-radius: 6px;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: white;
+    padding: 20px;
+}
+
+.login form label {
+    display: block;
+}
+
+.login form input {
+    display: block;
+    width: 100%;
+}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About Me    
+{% endblock %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="about-hero">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Your go-to platform for real-time sports updates, insights, and fan engagement.</p>
+    </div>
+  </section>
+
+  <section class="about-content container">
+    <div class="mission">
+      <h3>Our Mission</h3>
+      <p>
+        At SportsTracker, our mission is to bring fans closer to the action. We aim to provide live scores, detailed stats, and timely updates in a clean, intuitive interface — so you never miss a moment.
+      </p>
+    </div>
+
+    <div class="team">
+      <h3>Our Team</h3>
+      <p>
+        We are a small but passionate team of sports lovers, developers, and designers. We work together to build tools that turn raw data into meaningful insights. Our backgrounds span software development, data analytics, sports journalism, and UX design.
+      </p>
+    </div>
+
+    <div class="values">
+      <h3>What We Value</h3>
+      <ul>
+        <li><strong>Accuracy:</strong> Timely and correct information is our top priority.</li>
+        <li><strong>Transparency:</strong> We believe in open data sources and clear methodology.</li>
+        <li><strong>Community:</strong> Fans, players, coaches — we’re all part of this ecosystem.</li>
+        <li><strong>Growth:</strong> We continuously improve and expand to new sports, leagues, and features.</li>
+      </ul>
+    </div>
+
+    <div class="contact">
+      <h3>Contact</h3>
+      <p>
+        Got questions, feedback, or want to partner? Reach out to us at:<br>
+        <a href="mailto:info@sportstracker.com">info@sportstracker.com</a>
+      </p>
+    </div>
+  </section>
+{% endblock %}

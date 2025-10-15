@@ -1,0 +1,53 @@
+use this structre for each page created
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css'%}">
+{% endblock %}
+
+{% block content %}
+<div class="login">
+    
+</div>
+{% endblock %}
+
+---- ONLY ONCE TO CREATE THE PROJECT -----
+
+# create a venv
+python3 -m venv venv
+
+# activate venv
+mac/linux: source venv/bin/activate
+windows: venv\Scripts\activate
+
+
+# install django
+python3 -m pip install django whitenoise pillow
+
+
+# create the project
+django-admin startproject config .
+
+----------------------------------------------
+
+-- create apps --
+
+python3 manage.py startapp namehere
+
+1 - create a urls 
+2 - register the apps
+3 - register the urls
+
+
+
+
+
+-- MIGRATIONS --
+EVERYTIME you modify a model you need to make migrations:
+python3 manage.py makemigrations
+python3 manage.py migrate

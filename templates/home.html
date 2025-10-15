@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home page    
+{% endblock %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div>
+
+  <section class="hero">
+    <h2>Track your favorite sports in real time</h2>
+    <p>Live scores, stats, updates & more</p>
+  </section>
+  <div>
+    <img src="css/img/sports.jpg" alt="">
+  </div>
+  <section class="live-scores">
+    <h2>Live Matches</h2>
+    <div id="matches">
+      <p>Loading matches...</p>
+    </div>
+  </section>
+
+  <section class="recent-updates">
+    <h2>Recent Updates</h2>
+    <ul id="updates-list">
+      <li>No updates yet.</li>
+    </ul>
+  </section>
+
+
+</div>
+{% endblock %}
