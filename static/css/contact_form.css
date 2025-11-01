@@ -1,0 +1,112 @@
+/* ===== Basic Reset & Typography ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Background & Text */
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Wrapper & Card */
+.contact-wrapper {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.contact-card {
+    background: #fff;
+    border-left: 6px solid #1e40af;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+.contact-card h2 {
+    margin-bottom: 20px;
+    color: #1e3a8a;
+    text-align: center;
+}
+
+/* Input Groups */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"],
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: #f9faff;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #1e40af;
+    background: #fff;
+}
+
+/* Button */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #1e40af;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #162e8c;
+    transform: translateY(-2px);
+}
+
+/* Success Alert */
+.alert-success {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #4CAF50;
+    background-color: #e8f6ec;
+    color: #256029;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .contact-card {
+        padding: 20px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 14px 0;
+    }
+}

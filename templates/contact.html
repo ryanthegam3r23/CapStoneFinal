@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Contact Us{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/contact_form.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="contact-wrapper">
+  <div class="contact-card">
+    <h2>Contact Us</h2>
+
+    {% if submitted %}
+      <div class="alert-success">
+        Thanks for your message! We’ll get back to you shortly.
+      </div>
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+      <div class="input-group">
+        {{ form.name.label_tag }}
+        {{ form.name }}
+      </div>
+      <div class="input-group">
+        {{ form.email.label_tag }}
+        {{ form.email }}
+      </div>
+      <div class="input-group">
+        {{ form.subject.label_tag }}
+        {{ form.subject }}
+      </div>
+      <div class="input-group">
+        {{ form.message.label_tag }}
+        {{ form.message }}
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

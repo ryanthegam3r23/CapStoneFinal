@@ -51,3 +51,24 @@ python3 manage.py startapp namehere
 EVERYTIME you modify a model you need to make migrations:
 python3 manage.py makemigrations
 python3 manage.py migrate
+
+
+---- GIT -----
+- create the .gitignore file
+run:
+git init
+git add -A
+git commit -m "initial" 
+
+- create a github repository and copy https for win, ssh for mac
+run:
+git remote add origin PASTERURLHERE
+
+- first push:
+git push -u origin main 
+- if that ^ fails try:
+git push -u origin master
+
+
+- next push is just:
+git push

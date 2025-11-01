@@ -1,27 +1,109 @@
-.login {
-    background-color: #f4f0f0;
+/* ===== Base Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.login h1 {
-    color: darkcyan;
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear‑gradient(135deg, #e2ecf9, #f4f6fd);
+  color: #333;
 }
 
-.login form {
-    border: 1px solid #333;
-    border-radius: 6px;
-    max-width: 350px;
-    margin-left: auto;
-    margin-right: auto;
-
-    background-color: white;
-    padding: 20px;
+.login‑wrapper {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
 }
 
-.login form label {
-    display: block;
+.login‑card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 14px 24px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.06);
+  padding: 40px 30px;
+  text-align: center;
 }
 
-.login form input {
-    display: block;
-    width: 100%;
+.login‑card h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #1e3a8a;
+}
+
+.input‑group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input‑group input {
+  width: 100%;
+  padding: 14px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  background: #f9faff;
+  transition: border‑color 0.3s, background 0.3s;
+}
+
+.input‑group input:focus {
+  border-color: #1e40af;
+  background: #fff;
+}
+
+.input‑group label {
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  font-size: 0.9rem;
+  color: #777;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.input‑group input:focus + label,
+.input‑group input:not(:placeholder‑shaded) + label {
+  top: ‑10px;
+  left: 10px;
+  font-size: 0.75rem;
+  color: #1e40af;
+  background: #fff;
+  padding: 0 4px;
+}
+
+.btn‑primary {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #1e40af;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn‑primary:hover {
+  background-color: #162e8c;
+  transform: translateY(‑2px);
+}
+
+.signup‑link {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.signup‑link a {
+  color: #1e40af;
+  text-decoration: none;
+}
+
+.signup‑link a:hover {
+  text-decoration: underline;
 }

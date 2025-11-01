@@ -1,68 +1,80 @@
-/* For about page hero/banner section */
 .about-hero {
-  background: #004d99;
-  color: white;
-  text-align: center;
-  padding: 3rem 1rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+                url('../img/about-bg.jpg') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 6em 2em;
+    border-bottom: 3px solid #00ff88;
 }
-.about-hero .container {
-  max-width: 800px;
-  margin: 0 auto;
+
+.about-hero h1 {
+    font-size: 2.8em;
+    color: #00ff88;
+    margin-bottom: 0.5em;
 }
-.about-hero h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
+
 .about-hero p {
-  font-size: 1.2rem;
+    font-size: 1.2em;
+    color: #ccc;
 }
 
-/* About content section */
 .about-content {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-.about-content .mission,
-.about-content .team,
-.about-content .values,
-.about-content .contact {
-  margin-bottom: 1.5rem;
-}
-.about-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #004d99;
-}
-.about-content p {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-.about-content ul {
-  list-style: disc inside;
-}
-.about-content ul li {
-  margin-bottom: 0.5rem;
+    max-width: 1000px;
+    margin: 4em auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 0 1.5em;
 }
 
-/* Link styling override for about page contact */
-.about-content a {
-  color: #004d99;
-  text-decoration: underline;
+.card {
+    background: #1a1a1a;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 2em;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
+    transition: 0.3s;
 }
 
-/* Responsive tweaks */
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.card h2 {
+    color: #00ff88;
+    margin-bottom: 0.8em;
+}
+
+.card p {
+    color: #ddd;
+    line-height: 1.6em;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1em;
+    background: #00ff88;
+    color: #111;
+    padding: 0.6em 1.4em;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #00cc6a;
+    transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
-  .about-hero h2 {
-    font-size: 1.6rem;
-  }
-  .about-hero p {
-    font-size: 1rem;
-  }
-  .about-content h3 {
-    font-size: 1.3rem;
-  }
-  .about-content p, .about-content ul li {
-    font-size: 0.95rem;
-  }
+    .about-hero h1 {
+        font-size: 2em;
+    }
+    .about-hero p {
+        font-size: 1em;
+    }
 }
+

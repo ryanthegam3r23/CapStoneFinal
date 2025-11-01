@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Live Game Detail
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/game_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="game-container">
+    <h1>Live NFL Game</h1>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% else %}
+        <div class="status-bar">
+            <span>Status: {{ status }}</span> |
+            <span>Time: {{ gameTimeDisplay }}</span>
+        </div>
+
+        <div class="teams">
+            <div class="team home-team">
+                <img src="{% static 'img/logos/' %}{{ homeCompetitor.abbreviation|lower }}.png" 
+                     alt="{{ homeCompetitor.name }} logo" width="120">
+                <h2>{{ homeCompetitor.name }}</h2>
+                <span class="score">{{ homeCompetitor.score|default:"0" }}</span>
+            </div>
+
+            <div class="versus">VS</div>
+
+            <div class="team away-team">
+                <img src="{% static 'img/logos/' %}{{ awayCompetitor.abbreviation|lower }}.png" 
+                     alt="{{ awayCompetitor.name }} logo" width="120">
+                <h2>{{ awayCompetitor.name }}</h2>
+                <span class="score">{{ awayCompetitor.score|default:"0" }}</span>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+
+
+
+
+
+

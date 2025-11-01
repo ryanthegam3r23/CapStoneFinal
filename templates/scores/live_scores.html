@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Live NFL Scores{% endblock %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/scores.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Live NFL Scores</h1>
+
+<ul class="live-games">
+    {% for game in live %}
+        <li class="game-card">
+            <div class="competition">{{ game.competitionDisplayName }}</div>
+            <div class="game-time">Time: {{ game.gameTimeDisplay }}</div>
+
+            <div class="teams">
+                <!-- Home Team -->
+                <div class="team">
+                    <img src="{% static 'img/logos/' %}{{ game.homeCompetitor.symbolicName|lower }}.png"
+                         alt="{{ game.homeCompetitor.name }} logo" width="80" class="team-logo">
+                    <strong>{{ game.homeCompetitor.name }}</strong>
+                    <div class="score-box">{{ game.homeCompetitor.score|default:"0" }}</div>
+                </div>
+
+                <div class="versus">VS</div>
+
+                <!-- Away Team -->
+                <div class="team">
+                    <img src="{% static 'img/logos/' %}{{ game.awayCompetitor.symbolicName|lower }}.png"
+                         alt="{{ game.awayCompetitor.name }} logo" width="80" class="team-logo">
+                    <strong>{{ game.awayCompetitor.name }}</strong>
+                    <div class="score-box">{{ game.awayCompetitor.score|default:"0" }}</div>
+                </div>
+            </div>
+
+            <a href="{% url 'live_scores:game_detail' game.id %}" class="details-link">View Details</a>
+
+            {% if game.statusText %}
+            <div class="status">{{ game.statusText }}</div>
+            {% endif %}
+        </li>
+    {% empty %}
+        <li>No live games at the moment.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+
+
+

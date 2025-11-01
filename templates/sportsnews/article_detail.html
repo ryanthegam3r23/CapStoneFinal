@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/article_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<article class="article-detail">
+    <h1>{{ article.title }}</h1>
+
+    {% if article.image %}
+        <img src="{{ article.image.url }}" alt="{{ article.title }}">
+    {% endif %}
+
+    <p>{{ article.content }}</p>
+    <p><small>Published on {{ article.published_at|date:"M d, Y" }}</small></p>
+
+    <hr>
+
+    <div class="likes-section">
+        <p><strong>Likes: </strong>{{ article.total_likes }}</p>
+        {% if request.user.is_authenticated %}
+            <form action="{% url 'sportsnews:like_article' article.pk %}" method="post">
+                {% csrf_token %}
+                {% if liked_by_user %}
+                    <button type="submit">Unlike</button>
+                {% else %}
+                    <button type="submit">Like</button>
+                {% endif %}
+            </form>
+        {% else %}
+            <p><a href="{% url 'login' %}">Login</a> to like this article.</p>
+        {% endif %}
+    </div>
+
+    <hr>
+
+    <h2>Comments ({{ comments|length }})</h2>
+    {% for comment in comments %}
+        <div class="comment">
+            <p><strong>{{ comment.user.username }}</strong> – {{ comment.created_at|date:"M d, Y H:i" }}</p>
+            <p>{{ comment.content }}</p>
+        </div>
+    {% empty %}
+        <p>No comments yet. Be the first to comment!</p>
+    {% endfor %}
+
+    <div class="comment-form">
+        <h3>Leave a comment</h3>
+        {% if request.user.is_authenticated %}
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <button type="submit" name="comment_submit">Submit comment</button>
+            </form>
+        {% else %}
+            <p><a href="{% url 'login' %}">Login</a> to leave a comment.</p>
+        {% endif %}
+    </div>
+
+</article>
+{% endblock %}
+
+

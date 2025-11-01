@@ -1,0 +1,185 @@
+/* ===== Basic Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+}
+
+/* Container for articles – list view */
+.articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Article Card */
+.article {
+    background-color: #fff;
+    border-left: 6px solid #1e40af;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Article Image */
+.article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Article Content */
+.article h2 {
+    font-size: 1.4rem;
+    margin: 15px;
+    color: #1e3a8a;
+}
+
+.article p {
+    margin: 0 15px 15px;
+    color: #555;
+}
+
+/* Metadata and badges */
+.article small {
+    display: block;
+    margin: 0 15px 10px;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 0 5px 10px 0;
+    background-color: #f59e0b;
+    color: white;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Detail view */
+.article-detail {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.article-detail img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.article-detail h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #1e3a8a;
+}
+
+.article-detail p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.article-detail small {
+    color: #999;
+}
+
+/* Like section */
+.likes-section {
+    margin: 30px 0;
+    padding: 15px 20px;
+    background: #f8f9ff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.likes-section p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+.likes-section form button {
+    padding: 10px 18px;
+    background: #1e40af;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.likes-section form button:hover {
+    background: #162e8c;
+}
+
+/* Comments */
+.comment {
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: #fff;
+    border-left: 6px solid #1e40af;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.comment p strong {
+    color: #1e40af;
+}
+
+.comment-form {
+    margin-top: 30px;
+}
+
+.comment-form form button {
+    padding: 10px 18px;
+    background: #f59e0b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.comment-form form button:hover {
+    background: #d48e0a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .article h2 {
+        font-size: 1.2rem;
+    }
+    .likes-section form button,
+    .comment-form form button {
+        width: 100%;
+        padding: 12px 0;
+    }
+}
+
+
+

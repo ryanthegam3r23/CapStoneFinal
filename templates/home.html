@@ -1,38 +1,57 @@
 {% extends 'base.html' %}
-
-{% block title %}
-Home page    
-{% endblock %}
-
 {% load static %}
+
+{% block title %}Home - Live Sports Tracker{% endblock %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
 
 {% block content %}
-<div>
-
-  <section class="hero">
-    <h2>Track your favorite sports in real time</h2>
-    <p>Live scores, stats, updates & more</p>
-  </section>
-  <div>
-    <img src="css/img/sports.jpg" alt="">
-  </div>
-  <section class="live-scores">
-    <h2>Live Matches</h2>
-    <div id="matches">
-      <p>Loading matches...</p>
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <h1>Live Sports Tracker</h1>
+    <p>Real-time NFL scores, stats, and highlights — all in one place.</p>
+    <div class="hero-buttons">
+      <a href="{% url 'live_scores:scores' %}" class="btn primary-btn">Live Scores</a>
+      <a href="{% url 'sportsnews:list' %}" class="btn secondary-btn">Latest News</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="recent-updates">
-    <h2>Recent Updates</h2>
-    <ul id="updates-list">
-      <li>No updates yet.</li>
-    </ul>
-  </section>
+<section class="info-section">
+  <h2>Explore the Game</h2>
+  <div class="info-grid">
+    <div class="info-card">
+      <img src="{% static 'img/stats-icon.png' %}" alt="Stats Icon">
+      <h3>Player Stats</h3>
+      <p>Dive deep into the latest player stats, team records, and live analytics.</p>
+      <a href="{% url 'live_scores:scores' %}" class="btn small-btn">View Stats</a>
+    </div>
 
+    <div class="info-card">
+      <img src="{% static 'img/game-icon.png' %}" alt="Upcoming Games">
+      <h3>Upcoming Games</h3>
+      <p>Get ready for the next big matchup. Stay ahead with upcoming schedules.</p>
+      <a href="{% url 'live_scores:scores' %}" class="btn small-btn">View Schedule</a>
+    </div>
 
-</div>
+    <div class="info-card">
+      <img src="{% static 'img/news-icon.png' %}" alt="News">
+      <h3>Sports News</h3>
+      <p>Follow breaking stories, injury updates, and post-game coverage.</p>
+      <a href="{% url 'sportsnews:list' %}" class="btn small-btn">Read More</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Join the Action</h2>
+  <p>Follow your favorite teams and stay updated — anytime, anywhere.</p>
+  <a href="{% url 'about' %}" class="btn primary-btn">Learn More</a>
+</section>
+
 {% endblock %}
+
+
