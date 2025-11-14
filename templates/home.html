@@ -24,21 +24,18 @@
   <h2>Explore the Game</h2>
   <div class="info-grid">
     <div class="info-card">
-      <img src="{% static 'img/stats-icon.png' %}" alt="Stats Icon">
       <h3>Player Stats</h3>
       <p>Dive deep into the latest player stats, team records, and live analytics.</p>
       <a href="{% url 'live_scores:scores' %}" class="btn small-btn">View Stats</a>
     </div>
 
     <div class="info-card">
-      <img src="{% static 'img/game-icon.png' %}" alt="Upcoming Games">
       <h3>Upcoming Games</h3>
       <p>Get ready for the next big matchup. Stay ahead with upcoming schedules.</p>
       <a href="{% url 'live_scores:scores' %}" class="btn small-btn">View Schedule</a>
     </div>
 
     <div class="info-card">
-      <img src="{% static 'img/news-icon.png' %}" alt="News">
       <h3>Sports News</h3>
       <p>Follow breaking stories, injury updates, and post-game coverage.</p>
       <a href="{% url 'sportsnews:list' %}" class="btn small-btn">Read More</a>

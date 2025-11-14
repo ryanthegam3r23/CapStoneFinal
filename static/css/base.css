@@ -12,7 +12,7 @@ html, body {
     min-height: 100vh;
 }
 
-/* Navbar stays at the top */
+/* ===== Navbar ===== */
 .navbar {
     background: #111;
     border-bottom: 2px solid #00ff88;
@@ -39,8 +39,12 @@ html, body {
     list-style: none;
     display: flex;
     gap: 1.5em;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
+/* Regular links */
 .nav-links a {
     color: #fff;
     text-decoration: none;
@@ -52,7 +56,33 @@ html, body {
     color: #00ff88;
 }
 
-/* Main content grows to fill space */
+/* ===== Logout Button ===== */
+/* ===== Logout Button ===== */
+.logout-form {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: color 0.3s;
+    padding: 0;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    color: #00ff88;
+}
+
+
+/* ===== Page Content ===== */
 .content {
     flex: 1;
     padding: 3em 1.5em;
@@ -60,7 +90,7 @@ html, body {
     margin: 0 auto;
 }
 
-/* Footer at bottom (not fixed) */
+/* ===== Footer ===== */
 .footer {
     background: #111;
     border-top: 2px solid #00ff88;
@@ -70,7 +100,7 @@ html, body {
     font-size: 0.9em;
 }
 
-/* Card styles */
+/* ===== Cards ===== */
 .card {
     background: #1a1a1a;
     border: 1px solid #222;
@@ -85,10 +115,21 @@ html, body {
     box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
 }
 
+/* ===== Headings ===== */
 h1, h2 {
     color: #00ff88;
     text-align: center;
 }
+
+/* ===== Responsive Navbar ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 1em;
+        text-align: center;
+    }
+}
+
 
 
 

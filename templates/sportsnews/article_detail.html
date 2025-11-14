@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}{{ article.title }}{% endblock %}
 
-{% load static %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/article_detail.css' %}">
 {% endblock %}
@@ -32,7 +31,7 @@
                 {% endif %}
             </form>
         {% else %}
-            <p><a href="{% url 'login' %}">Login</a> to like this article.</p>
+            <p><a href="{% url 'users:login' %}">Log in</a> to like this article.</p>
         {% endif %}
     </div>
 
@@ -57,11 +56,17 @@
                 <button type="submit" name="comment_submit">Submit comment</button>
             </form>
         {% else %}
-            <p><a href="{% url 'login' %}">Login</a> to leave a comment.</p>
+            <p><a href="{% url 'users:login' %}">Log in</a> to leave a comment.</p>
         {% endif %}
     </div>
 
 </article>
 {% endblock %}
+
+
+
+
+
+
 
 

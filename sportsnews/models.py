@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class Article(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
-    image = models.ImageField(upload_to='article_images/', blank=True, null=True)
+    image = models.ImageField(upload_to='img/', blank=True, null=True)
     published_at = models.DateTimeField(auto_now_add=True)
 
     likes = models.ManyToManyField(User, related_name='liked_articles', blank=True)

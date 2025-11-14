@@ -1,109 +1,97 @@
-/* ===== Base Reset ===== */
+/* ===== Basic Reset & Typography ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  min-height: 100vh;
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+/* Wrapper & Card */
+.login-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear‑gradient(135deg, #e2ecf9, #f4f6fd);
-  color: #333;
+  min-height: calc(100vh - 160px); /* adjust to accommodate header/footer if needed */
+  padding: 2em 1.5em;
 }
 
-.login‑wrapper {
-  width: 100%;
-  max-width: 420px;
-  padding: 20px;
-}
-
-.login‑card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 14px 24px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.06);
+.login-card {
+  background: #111;
+  border: 2px solid #00ff88;
+  border-radius: 10px;
   padding: 40px 30px;
+  width: 100%;
+  max-width: 400px;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-.login‑card h2 {
-  margin-bottom: 30px;
-  font-size: 2rem;
-  color: #1e3a8a;
+.login-card h2 {
+  margin-bottom: 20px;
+  color: #00ff88;
 }
 
-.input‑group {
-  position: relative;
-  margin-bottom: 25px;
+/* Form and Fields */
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.input‑group input {
-  width: 100%;
-  padding: 14px 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  font-size: 1rem;
-  background: #f9faff;
-  transition: border‑color 0.3s, background 0.3s;
-}
-
-.input‑group input:focus {
-  border-color: #1e40af;
-  background: #fff;
-}
-
-.input‑group label {
-  position: absolute;
-  top: 14px;
-  left: 12px;
-  font-size: 0.9rem;
-  color: #777;
-  pointer-events: none;
-  transition: all 0.3s;
-}
-
-.input‑group input:focus + label,
-.input‑group input:not(:placeholder‑shaded) + label {
-  top: ‑10px;
-  left: 10px;
-  font-size: 0.75rem;
-  color: #1e40af;
-  background: #fff;
-  padding: 0 4px;
-}
-
-.btn‑primary {
-  width: 100%;
-  padding: 14px;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #1e40af;
+.login-card .btn-primary {
+  background-color: #00ff88;
+  color: #111;
   border: none;
-  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
 }
 
-.btn‑primary:hover {
-  background-color: #162e8c;
-  transform: translateY(‑2px);
+.login-card .btn-primary:hover {
+  background-color: #1aff9e;
+  transform: translateY(-2px);
 }
 
-.signup‑link {
+/* Sign-up link styling */
+.signup-link {
   margin-top: 20px;
   font-size: 0.9rem;
-  color: #555;
+  color: #aaa;
 }
 
-.signup‑link a {
-  color: #1e40af;
+.signup-link a {
+  color: #00ff88;
   text-decoration: none;
 }
 
-.signup‑link a:hover {
+.signup-link a:hover {
   text-decoration: underline;
+}
+
+/* Additional button styling to match site theme */
+.btn-primary {
+  background-color: #00ff88;
+  color: #0a0a0a;
+  border: none;
+  padding: 12px 0;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #1aff9e;
+  transform: translateY(-2px);
 }

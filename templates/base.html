@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Sports Tracker{% endblock %}</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% block css %}{% endblock %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Sports Tracker{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  {% block css %}{% endblock %}
 </head>
+
 <body>
+  <div class="wrapper">
     <nav class="navbar">
-        <div class="container">
-            <a href="{% url 'home' %}" class="logo">🏈 LiveSports</a>
-            <ul class="nav-links">
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'sportsnews:list' %}">News</a></li>
-                <li><a href="{% url 'live_scores:scores' %}">Scores</a></li>
-            </ul>
-        </div>
+      <div class="container">
+        <a href="{% url 'home' %}" class="logo">🏈 <span>LiveSports</span></a>
+        <ul class="nav-links">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'sportsnews:list' %}">News</a></li>
+          <li><a href="{% url 'live_scores:scores' %}">Scores</a></li>
+
+          {% if user.is_authenticated %}
+          <li>
+            <form action="{% url 'users:logout' %}" method="post" class="logout-form">
+              {% csrf_token %}
+              <button type="submit" class="logout-btn">Logout</button>
+            </form>
+
+          </li>
+          {% else %}
+          <li><a href="{% url 'users:login' %}">Login</a></li>
+          {% endif %}
+        </ul>
+      </div>
     </nav>
 
     <main class="content">
-        {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
     </main>
 
     <footer class="footer">
-        <p>&copy; 2025 LiveSports Tracker | Built with Django 🐍</p>
+      <p>&copy; 2025 LiveSports Tracker | Built with Django 🐍</p>
     </footer>
+  </div>
 </body>
+
 </html>

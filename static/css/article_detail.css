@@ -1,185 +1,160 @@
-/* ===== Basic Reset ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.article-detail {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  background-color: #0b0b0b;
+  border: 2px solid #00ff80;
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0, 255, 128, 0.2);
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Body */
-body {
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
-    padding: 0;
+/* Headline */
+.article-detail h1 {
+  text-align: center;
+  color: #00ff80;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
 }
 
-/* Container for articles – list view */
-.articles {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Article Card */
-.article {
-    background-color: #fff;
-    border-left: 6px solid #1e40af;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-/* Article Image */
-.article img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+/* Image */
+.article-detail img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto 20px;
 }
 
 /* Article Content */
-.article h2 {
-    font-size: 1.4rem;
-    margin: 15px;
-    color: #1e3a8a;
-}
-
-.article p {
-    margin: 0 15px 15px;
-    color: #555;
-}
-
-/* Metadata and badges */
-.article small {
-    display: block;
-    margin: 0 15px 10px;
-    font-size: 0.8rem;
-    color: #999;
-}
-
-.badge {
-    display: inline-block;
-    padding: 2px 8px;
-    margin: 0 5px 10px 0;
-    background-color: #f59e0b;
-    color: white;
-    font-size: 0.7rem;
-    border-radius: 4px;
-    font-weight: bold;
-}
-
-/* Detail view */
-.article-detail {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.article-detail img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-.article-detail h1 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #1e3a8a;
-}
-
 .article-detail p {
-    margin-bottom: 20px;
-    color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 15px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
+/* Published date */
 .article-detail small {
-    color: #999;
+  color: #aaa;
 }
 
-/* Like section */
+/* Likes Section */
 .likes-section {
-    margin: 30px 0;
+  background-color: #111;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.likes-section button {
+  background-color: #00ff80;
+  color: #000;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.likes-section button:hover {
+  background-color: #00cc66;
+}
+
+/* Comments section */
+.comments-section {
+    margin-top: 40px;
+}
+.comments-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #00ff88;
+}
+.comment {
+    margin-bottom: 20px;
     padding: 15px 20px;
-    background: #f8f9ff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    background-color: #111;
+    border-left: 6px solid #00ff88;
+    border-radius: 4px;
+}
+.comment p strong {
+    color: #00ff88;
+}
+.comment small {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #888;
 }
 
-.likes-section p {
+/* Comment form styling */
+.comment-form {
+    margin-top: 30px;
+}
+.comment-form form textarea,
+.comment-form form input[type="text"],
+.comment-form form .form-control {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    margin-bottom: 15px;
+    border: 1px solid #222;
+    border-radius: 6px;
+    background-color: #1a1a1a;
+    color: #fff;
     font-size: 1rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #1e3a8a;
+    resize: vertical;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: pre-wrap;
 }
 
-.likes-section form button {
+.comment-form button {
     padding: 10px 18px;
     background: #1e40af;
     color: white;
     border: none;
     border-radius: 4px;
+    font-weight: 500;
     cursor: pointer;
     transition: background 0.3s ease;
 }
-
-.likes-section form button:hover {
+.comment-form button:hover {
     background: #162e8c;
 }
 
-/* Comments */
-.comment {
-    margin-bottom: 20px;
-    padding: 15px 20px;
-    background: #fff;
-    border-left: 6px solid #1e40af;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+/* Divider Lines */
+hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 25px 0;
 }
 
-.comment p strong {
-    color: #1e40af;
+/* Responsive Design */
+@media (max-width: 600px) {
+  .article-detail {
+    padding: 15px;
+  }
+
+  .article-detail h1 {
+    font-size: 1.7rem;
+  }
+
+  .article-detail p {
+    font-size: 1rem;
+  }
 }
 
-.comment-form {
-    margin-top: 30px;
-}
 
-.comment-form form button {
-    padding: 10px 18px;
-    background: #f59e0b;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
 
-.comment-form form button:hover {
-    background: #d48e0a;
-}
 
-/* Responsive */
-@media (max-width: 768px) {
-    .article h2 {
-        font-size: 1.2rem;
-    }
-    .likes-section form button,
-    .comment-form form button {
-        width: 100%;
-        padding: 12px 0;
-    }
-}
 
 
 
